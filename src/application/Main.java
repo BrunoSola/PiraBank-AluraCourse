@@ -68,7 +68,7 @@ public class Main {
         client1.address.state = "São Paulo";
         client1.address.street = "Av. São Paulo";
         client1.address.zipCode = "12345-123";
-        System.out.println(client1.address.toString());
+        System.out.println(client1.address);
 
     }
 }
