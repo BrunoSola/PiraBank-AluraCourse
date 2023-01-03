@@ -4,7 +4,7 @@ public class Account {
      public int agency;
      public int currentAccount;
      public double balance;
-     public String holder;
+     public Client holder;
 
     public void deposit(double valor) {
          this.balance += valor;
