@@ -7,24 +7,24 @@ import entities.Client;
 public class Main {
     public static void main(String[] args) {
         Account firstAccount = new Account();
-        firstAccount.balance = 200;
-        System.out.println("O saldo da firstAccount é: $" + firstAccount.balance);
+        firstAccount.deposit(200);
+        System.out.println("O saldo da firstAccount é: $" + firstAccount.getBalance());
         Account secondAccount = new Account();
-        secondAccount.balance = 50;
-        System.out.println("O saldo da secondAccount é: $" + secondAccount.balance);
+        secondAccount.deposit(50);
+        System.out.println("O saldo da secondAccount é: $" + secondAccount.getBalance());
 
         System.out.println();
 
         firstAccount.deposit(100);
         secondAccount.deposit(300);
-        System.out.println("O novo saldo da firstAccount é: $" + firstAccount.balance);
-        System.out.println("O novo saldo da secondAccount é: $" + secondAccount.balance);
+        System.out.println("O novo saldo da firstAccount é: $" + firstAccount.getBalance());
+        System.out.println("O novo saldo da secondAccount é: $" + secondAccount.getBalance());
 
         System.out.println();
 
         if(firstAccount.withdraw(200)){
             System.out.println("Saque Realizado com sucesso.");
-            System.out.println("O novo saldo da firstAccount é: $" + firstAccount.balance);
+            System.out.println("O novo saldo da firstAccount é: $" + firstAccount.getBalance());
         }else {
             System.out.println("Saldo insulficiente.");
         }
@@ -33,7 +33,7 @@ public class Main {
 
         if (secondAccount.withdraw(400)){
             System.out.println("Saque Realizado com sucesso.");
-            System.out.println("O novo saldo da secondAccount é: $" + secondAccount.balance);
+            System.out.println("O novo saldo da secondAccount é: $" + secondAccount.getBalance());
         }else {
             System.out.println("Saldo insulficiente.");
         }
@@ -49,26 +49,26 @@ public class Main {
         System.out.println();
 
         Client client1 = new Client();
-        client1.name = "Bruno Sola";
-        client1.cpf = "111.111.111-11";
-        client1.profissao= "Student";
+        client1.setName("Bruno Sola");
+        client1.setCpf("111.111.111-11");
+        client1.setProfissao("Student");
 
         // Composição - O titular da firstAccount aponta para o client1.
-        firstAccount.holder = client1;
+        firstAccount.setHolder(client1);
 
-        System.out.println(firstAccount.holder.name);
-        System.out.println(firstAccount.holder.cpf);
-        System.out.println(firstAccount.holder.profissao);
+        System.out.println(firstAccount.getHolder().getName());
+        System.out.println(firstAccount.getHolder().getCpf());
+        System.out.println(firstAccount.getHolder().getProfissao());
         System.out.println();
 
-        client1.address = new Address();
-        client1.address.city = "Piracicaba";
-        client1.address.country = "Brasil";
-        client1.address.number = "1111";
-        client1.address.state = "São Paulo";
-        client1.address.street = "Av. São Paulo";
-        client1.address.zipCode = "12345-123";
-        System.out.println(client1.address);
+        client1.setAddress(new Address()) ;
+        client1.getAddress().setCity("Piracicaba");
+        client1.getAddress().setCountry("Brasil");
+        client1.getAddress().setNumber("1111");
+        client1.getAddress().setState("São Paulo");
+        client1.getAddress().setStreet("Av. São Paulo");
+        client1.getAddress().setZipCode("12345-123");
+        System.out.println(client1.getAddress());
 
     }
 }
