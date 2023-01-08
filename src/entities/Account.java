@@ -1,10 +1,22 @@
 package entities;
 
+import java.sql.SQLOutput;
+
 public class Account {
      private int agency;
      private int currentAccount;
      private double balance;
      private Client holder;
+     // Criando um atributo static(atributo da classse conta)
+    private static int amount;
+
+    public Account(int agency, int currentAccount) {
+        //criando um contador de contas instanciadas(abertas).
+        Account.amount++;
+
+        this.agency = agency;
+        this.currentAccount = currentAccount;
+    }
 
     public double getBalance() {
         return balance;
@@ -13,24 +25,31 @@ public class Account {
     public int getAgency() {
         return agency;
     }
-    public void setAgency(int agency) {
-        this.agency = agency;
-    }
     public int getCurrentAccount() {
+
         return currentAccount;
     }
-    public void setCurrentAccount(int currentAccount) {
-        this.currentAccount = currentAccount;
-    }
+
     public Client getHolder() {
+
         return holder;
     }
     public void setHolder(Client holder) {
+
         this.holder = holder;
     }
 
+    public static int getAmount() {
+        return amount;
+    }
+
     public void deposit(double valor) {
-         this.balance += valor;
+        if (valor >= 0){
+            this.balance += valor;
+        }
+        else {
+            System.out.println("O valor de deposito não pode ser negativo.");
+        }
     }
 
     public boolean withdraw(double valor){

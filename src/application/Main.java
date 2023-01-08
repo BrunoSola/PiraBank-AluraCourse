@@ -6,13 +6,16 @@ import entities.Client;
 
 public class Main {
     public static void main(String[] args) {
-        Account firstAccount = new Account();
+        //Account firstAccount = new Account(); - Alterado, uma nova conta necessita de uma agencia e C/C para ser criada.
+        Account firstAccount = new Account(1111, 22222);
         firstAccount.deposit(200);
         System.out.println("O saldo da firstAccount é: $" + firstAccount.getBalance());
-        Account secondAccount = new Account();
+        //Account secondAccount = new Account(); - Alterado, uma nova conta necessita de uma agencia e C/C para ser criada.
+        Account secondAccount = new Account(3333, 44444);
         secondAccount.deposit(50);
         System.out.println("O saldo da secondAccount é: $" + secondAccount.getBalance());
-
+        System.out.println();
+        System.out.println("O total de contas abertas é: "+ Account.getAmount() + " contas.");
         System.out.println();
 
         firstAccount.deposit(100);
