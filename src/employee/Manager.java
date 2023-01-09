@@ -5,8 +5,10 @@ public class Manager extends Employee{
     private String username = getName().toLowerCase().replace(" ","");
     private int password;
 
-    public Manager(String name, String cpf, double salary) {
+    public Manager(String name, String cpf, double salary, int password) {
         super(name, cpf, salary);
+        this.password = password;
+
     }
 
     public String getUsername() {
@@ -15,10 +17,6 @@ public class Manager extends Employee{
 
     public int getPassword() {
         return password;
-    }
-
-    public double getBonus(){
-        return getSalary();
     }
 
     public void setChangeUsername(String username) {
@@ -35,6 +33,10 @@ public class Manager extends Employee{
             return;
         }
         System.out.println("Senha incorreta!");
+    }
+
+    public double getBonus() {
+        return super.salary;
     }
 
 }
