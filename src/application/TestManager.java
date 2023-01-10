@@ -39,13 +39,14 @@ public class TestManager {
         String cpf = "12345678900";
         double salary = 5000.00;
         int senha = 1234;
-        Manager f1 = new Manager(name, cpf, salary, senha);
-        System.out.println("Nome do Gerente: " + f1.getName());
-        System.out.println("CPF do Gerente: " + f1.getCpf());
-        System.out.println("Salario do Gerente: " + f1.getSalary());
-        System.out.println("Bonificação do Gerente: " + f1.getBonus());
-        System.out.println("Dados de Login:\n" +
-                           "Username: " + f1.getUsername()+"\n"+
-                           "Password: " + f1.getPassword());
+
+//        Manager f1 = new Manager(name, cpf, salary, senha);
+//        System.out.println("Nome do Gerente: " + f1.getName());
+//        System.out.println("CPF do Gerente: " + f1.getCpf());
+//        System.out.println("Salario do Gerente: " + f1.getSalary());
+//        System.out.println("Bonificação do Gerente: " + f1.getBonus());
+//        System.out.println("Dados de Login:\n" +
+//                           "Username: " + f1.getUsername()+"\n"+
+//                           "Password: " + f1.getPassword());
     }
 }

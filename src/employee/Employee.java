@@ -4,12 +4,12 @@ public class Employee {
 
     private String name;
     private String cpf;
-    protected double salary;
+    private double salary;
 
-    public Employee(String name, String cpf, double salary) {
-        this.name = name;
-        this.cpf = cpf;
-        this.salary = salary;
+    public Employee() {
+//        this.name = name;
+//        this.cpf = cpf;
+//        this.salary = salary;
     }
 
     public String getName() {

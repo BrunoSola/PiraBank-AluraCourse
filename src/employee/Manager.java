@@ -2,13 +2,12 @@ package employee;
 
 public class Manager extends Employee{
 
-    private String username = getName().toLowerCase().replace(" ","");
+    private String username;// = getName().toLowerCase().replace(" ","");
     private int password;
 
-    public Manager(String name, String cpf, double salary, int password) {
-        super(name, cpf, salary);
-        this.password = password;
-
+    public Manager() {
+        //super(name, cpf, salary);
+        //this.password = password;
     }
 
     public String getUsername() {
@@ -36,7 +35,7 @@ public class Manager extends Employee{
     }
 
     public double getBonus() {
-        return super.salary;
+        return super.getBonus() + super.getSalary();
     }
 
 }
