@@ -8,11 +8,11 @@ public class TestPolimorfismo {
 
     public static void main(String[] args) {
 
-        Manager m1 = new Manager();
+        Employee m1 = new Manager();
         m1.setName("Bruno Sola");
         m1.setSalary(5000.0);
 
-        Manager m2 = new Manager();
+        Employee m2 = new Manager();
         m2.setName("Rafael Sola");
         m2.setSalary(10000.0);
 

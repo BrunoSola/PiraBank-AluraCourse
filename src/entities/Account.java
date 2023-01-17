@@ -1,34 +1,37 @@
 package entities;
 
-import java.sql.SQLOutput;
-
 public class Account {
      private int agency;
-     private int currentAccount;
+     private int AccountNumber;
      private double balance;
      private Client holder;
      // Criando um atributo static(atributo da classse conta)
     private static int amount;
 
-    public Account(int agency, int currentAccount) {
+    public Account(){
+
+    }
+
+    public Account(int agency, int AccountNumber) {
         //criando um contador de contas instanciadas(abertas).
         Account.amount++;
 
         this.agency = agency;
-        this.currentAccount = currentAccount;
+        this.AccountNumber = AccountNumber;
+    }
+
+    public int getAgency() {
+        return agency;
+    }
+
+    public int getAccountNumber() {
+        return AccountNumber;
     }
 
     public double getBalance() {
         return balance;
     }
 
-    public int getAgency() {
-        return agency;
-    }
-    public int getCurrentAccount() {
-
-        return currentAccount;
-    }
 
     public Client getHolder() {
 
@@ -57,13 +60,14 @@ public class Account {
               balance -= valor;
               return true;
          }
+         System.out.println("Saldo Insulficiente!");
          return false;
     }
 
     public boolean transfer(double valor, Account destino){
-        if (this.balance >= valor) {
-            this.balance -= valor;
+        if (this.withdraw(valor)) {
             destino.deposit(valor);
+            System.out.println("Transferencia realizada com sucesso!");
             return true;
         }
         return false;
