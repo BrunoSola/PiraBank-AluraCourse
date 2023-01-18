@@ -35,7 +35,9 @@ public class Manager extends Employee{
     }
 
     public double getBonus() {
-        return super.getBonus() + super.getSalary();
+        double bonus = super.getSalary();
+        System.out.println("O bônus do "+ getName() + " é R$" + bonus);
+        return bonus;
     }
 
 }

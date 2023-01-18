@@ -1,16 +1,19 @@
 package employee;
-
-public class Employee {
+//Não pode instanciar a classe, porque é abstrata.
+public abstract class Employee {
 
     private String name;
     private String cpf;
     private double salary;
 
     public Employee() {
-//        this.name = name;
-//        this.cpf = cpf;
-//        this.salary = salary;
+        this.name = name;
+        this.cpf = cpf;
+        this.salary = salary;
     }
+
+//  metodo sem corpo, não há implementação
+    public abstract double getBonus();
 
     public String getName() {
         return name;
@@ -32,9 +35,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    public double getBonus() {
-        return this.salary * 0.1;
-    }
+
 }
 
 

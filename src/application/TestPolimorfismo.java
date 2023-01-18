@@ -1,36 +1,50 @@
 package application;
 
-import employee.Employee;
-import employee.Manager;
+import employee.*;
 import entities.BonusController;
 
 public class TestPolimorfismo {
 
     public static void main(String[] args) {
 
-        Employee m1 = new Manager();
-        m1.setName("Bruno Sola");
-        m1.setSalary(5000.0);
+        Employee manager1 = new Manager();
+        manager1.setName("Bruno Sola");
+        manager1.setSalary(15000.0);
 
-        Employee m2 = new Manager();
-        m2.setName("Rafael Sola");
-        m2.setSalary(10000.0);
+        Employee adm1 = new Administration();
+        adm1.setName("Rafael Sola");
+        adm1.setSalary(3500.0);
 
-        Employee e1 = new Employee();
-        e1.setName("Joao Sola");
-        e1.setSalary(3000.0);
+        Employee banker1 = new Banker();
+        banker1.setName("Joao Sola");
+        banker1.setSalary(5000.0);
 
-        Employee e2 = new Employee();
-        e2.setName("Ricardo Sola");
-        e2.setSalary(2000.0);
+        Employee economist1 = new Economist();
+        economist1.setName("Ricardo Sola");
+        economist1.setSalary(8000.0);
+
+        Employee economist2 = new Economist();
+        economist2.setName("Isaias Sola");
+        economist2.setSalary(7000.0);
+
+        Employee marketing1 = new Marketing();
+        marketing1.setName("Ronaldo Sola");
+        marketing1.setSalary(4000.0);
 
         BonusController controller = new BonusController();
-        controller.register(m1);
-        controller.register(m2);
-        controller.register(e1);
-        controller.register(e2);
+        controller.register(manager1);
+        controller.register(adm1);
+        controller.register(banker1);
+        controller.register(economist1);
+        controller.register(economist2);
+        controller.register(marketing1);
 
-        System.out.println(controller.getSum());
+//        System.out.println("O bônus do "+ manager1.getName() + " é R$" + manager1.getBonus());
+//        System.out.println("O bônus do "+ adm1.getName() + " é R$" + adm1.getBonus());
+//        System.out.println("O bônus do "+ banker1.getName() + " é R$" + banker1.getBonus());
+//        System.out.println("O bônus do "+ economist1.getName() + " é R$" + economist1.getBonus());
+//        System.out.println("O bônus do "+ marketing1.getName() + " é R$" + marketing1.getBonus());
+        System.out.println("A bonificação total dos funcionarios é R$" + controller.getSum());
 
     }
 }

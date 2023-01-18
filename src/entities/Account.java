@@ -1,6 +1,6 @@
 package entities;
-
-public class Account {
+//Não pode instanciar a classe, porque é abstrata.
+public abstract class Account {
      private int agency;
      private int AccountNumber;
      private double balance;
