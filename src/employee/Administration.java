@@ -1,6 +1,8 @@
 package employee;
 
-public class Administration extends Employee{
+import entities.EmployeeAuthenticator;
+
+public class Administration extends EmployeeAuthenticator {
 
     @Override
     public double getBonus() {
