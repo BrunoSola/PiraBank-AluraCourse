@@ -1,10 +1,12 @@
 package entities;
 
-public class Client {
+// Cliente assina o contrato Authenticator.
+public class Client implements Authenticator{
     private String name;
     private String cpf;
     private String profissao;
     private Address address;
+    private int password;
 
     public String getName() {
         return name;
@@ -36,5 +38,17 @@ public class Client {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+    @Override
+    public void setPassword(int password){
+        this.password = password;
+    }
+
+    public boolean autentica(int password){
+        if (this.password == password){
+            return true;
+        }else {
+            return false;
+        }
     }
 }
