@@ -6,7 +6,11 @@ public class Client implements Authenticator{
     private String cpf;
     private String profissao;
     private Address address;
-    private int password;
+    private Authentication autenticacao;
+
+    public Client(){
+        autenticacao = new Authentication();
+    }
 
     public String getName() {
         return name;
@@ -39,16 +43,11 @@ public class Client implements Authenticator{
     public void setAddress(Address address) {
         this.address = address;
     }
-    @Override
-    public void setPassword(int password){
-        this.password = password;
-    }
 
+    public void setPassword(int password){
+        this.autenticacao.setPassword(password);
+    }
     public boolean autentica(int password){
-        if (this.password == password){
-            return true;
-        }else {
-            return false;
-        }
+        return this.autenticacao.autentica(password);
     }
 }

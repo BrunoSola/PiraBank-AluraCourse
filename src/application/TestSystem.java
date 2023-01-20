@@ -2,6 +2,8 @@ package application;
 
 import employee.Administration;
 import employee.Manager;
+import employee.Marketing;
+import entities.Authenticator;
 import entities.Client;
 import entities.SistemaInterno;
 
@@ -16,12 +18,14 @@ public class TestSystem {
         adm.setPassword(1234);
 
         Client client = new Client();
-        client.setPassword(123);
+        client.setPassword(1234);
+
 
         SistemaInterno autenticacao = new SistemaInterno();
         autenticacao.authenticator(m);
         autenticacao.authenticator(adm);
         autenticacao.authenticator(client);
+
 
     }
 }
