@@ -1,4 +1,4 @@
-package entities;
+package util;
 //Contrato Autenticavel
     //Quem assina esse contrato, precisa implementar os metodos.
         //metodo setPassword.

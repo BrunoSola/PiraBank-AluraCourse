@@ -1,6 +1,6 @@
 package employee;
-import entities.Authentication;
-import entities.Authenticator;
+import util.Authentication;
+import util.Authenticator;
 
 // Manager é um funcionario, herda a classe funcionario e assina o contrato Authenticator.
 public class Manager extends Employee implements Authenticator {

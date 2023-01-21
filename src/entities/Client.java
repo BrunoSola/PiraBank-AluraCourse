@@ -1,7 +1,10 @@
 package entities;
 
+import util.Authentication;
+import util.Authenticator;
+
 // Cliente assina o contrato Authenticator.
-public class Client implements Authenticator{
+public class Client implements Authenticator {
     private String name;
     private String cpf;
     private String profissao;

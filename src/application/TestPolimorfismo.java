@@ -1,7 +1,7 @@
 package application;
 
 import employee.*;
-import entities.BonusController;
+import util.BonusController;
 
 public class TestPolimorfismo {
 

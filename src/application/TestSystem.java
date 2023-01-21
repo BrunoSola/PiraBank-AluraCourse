@@ -2,10 +2,8 @@ package application;
 
 import employee.Administration;
 import employee.Manager;
-import employee.Marketing;
-import entities.Authenticator;
 import entities.Client;
-import entities.SistemaInterno;
+import util.SistemaInterno;
 
 public class TestSystem {
 
